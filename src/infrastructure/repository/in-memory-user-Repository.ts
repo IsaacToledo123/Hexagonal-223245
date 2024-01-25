@@ -1,17 +1,20 @@
-import { query } from "../dataBase/mysql";
-import { User } from "../domain/user";
-import { UserRepository } from "../domain/user-repository";
+import { query } from "../../dataBase/mysql";
+import { User } from "../../domain/entities/user";
+import { UserRepository } from "../../domain/interface/user-repository";
+
 
 export class InMemoryUserRepository implements UserRepository {
 
     async getById(userId: number): Promise<User | null> {
         const sql = "SELECT * FROM usuarios WHERE id = ?";
+        const params:any[]=[userId]
         try {
-            const [usuario]: any = await query(sql, [userId]);
-            if (!usuario) {
-                return null;
-            }
-            return new User(usuario.id, usuario.email);
+            const [usuario]: any = await query(sql, params);
+         
+            return new User(
+              usuario[0].id,
+              usuario[0].email
+            )
         } catch (error) {
             console.error(error);
             return null;

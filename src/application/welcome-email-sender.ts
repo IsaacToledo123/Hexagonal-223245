@@ -1,18 +1,18 @@
-import { UserRepository } from "../domain/user-repository"
-export class welcomeEmailSender{
+import { UserRepository } from "../domain/interface/user-repository"
+export class welcomeEmailSender {
 
-constructor(private readonly userRepository: UserRepository){
-}
-
-async run (userId:number){
-    console.log("user",userId)
-
-    const user= await this.userRepository.getById(userId)
-
-    if(!user){
-        throw new Error(`id no existe ${userId}`)
+    constructor( readonly userRepository: UserRepository) {
     }
-    console.log("user",user.email)
 
-}
+    async run(userId: number) {
+        console.log("user", userId)
+        try {
+            const user = await this.userRepository.getById(userId)
+            return user
+        } catch (error) {
+            return null
+        }
+
+
+    }
 }

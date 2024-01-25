@@ -1,5 +1,5 @@
-import { UserRepository } from "../domain/user-repository";
-import { User } from "../domain/user";
+import { UserRepository } from "../../domain/interface/user-repository";
+import { User } from "../../domain/entities/user";
 export class getAllUser {
     constructor(readonly userRepository: UserRepository) { }
     async run(): Promise<User[] | null> {

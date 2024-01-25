@@ -1,8 +1,8 @@
-import { agregarCiudadController } from "./agregarCiudad-controller";
-import { buscarCiudadController } from "./buscarCiudad-controller";
-import { InMemoryCiudad } from "./in-memory-ciudad";
-import { agregarCiudad } from "../application/agregar-ciudad";
-import { buscarCiudad } from "../application/buscar-ciudad";
+import { agregarCiudadController } from "./controllers/agregarCiudad-controller";
+import { buscarCiudadController } from "./controllers/buscarCiudad-controller";
+import { InMemoryCiudad } from "./repository/in-memory-ciudad";
+import { agregarCiudad } from "../application/methodsCiudad/agregar-ciudad";
+import { buscarCiudad } from "../application/methodsCiudad/buscar-ciudad";
 
 export const inMemoryCiudad = new InMemoryCiudad
 export const BuscarCiudad= new buscarCiudad(inMemoryCiudad) 

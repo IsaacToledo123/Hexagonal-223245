@@ -1,5 +1,5 @@
-import { Ciudad } from "../domain/ciudad";
-import { ciudadRepository } from "../domain/ciudad-repository";
+import { Ciudad } from "../../domain/entities/ciudad";
+import { ciudadRepository } from "../../domain/interface/ciudad-repository";
 
 export class agregarCiudad {
   constructor(readonly ciudadRepository: ciudadRepository) {}

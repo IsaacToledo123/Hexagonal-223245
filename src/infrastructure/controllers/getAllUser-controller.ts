@@ -1,8 +1,9 @@
 import { Request, Response } from "express";
-import { getAllVehiculos } from "../application/getAllVehiculos";
- export class getAllVehiculosController {
+import { getAllUser } from "../../application/methodsUser/getAllUsers";
 
-    constructor(private readonly getAllVehiculos:getAllVehiculos){}
+ export class getAllUserControllers {
+
+    constructor(private readonly getAllVehiculos:getAllUser){}
     async run(req: Request, res: Response){
         try {
             const vehiculo = await this.getAllVehiculos.run()

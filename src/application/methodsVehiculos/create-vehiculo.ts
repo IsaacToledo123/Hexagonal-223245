@@ -1,5 +1,5 @@
-import { Vehiculo } from "../domain/vehiculo";
-import { vehiculoRepository } from "../domain/vehiculo-repository";
+import { Vehiculo } from "../../domain/entities/vehiculo";
+import { vehiculoRepository } from "../../domain/interface/vehiculo-repository";
 
 export class createVehiculos {
   constructor(readonly vehiculoRepository: vehiculoRepository) {}

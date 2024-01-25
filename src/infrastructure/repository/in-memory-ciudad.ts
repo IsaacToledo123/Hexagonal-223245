@@ -1,6 +1,6 @@
-import { query } from "../dataBase/mysql";
-import { Ciudad } from "../domain/ciudad";
-import { ciudadRepository } from "../domain/ciudad-repository";
+import { query } from "../../dataBase/mysql";
+import { Ciudad } from "../../domain/entities/ciudad";
+import { ciudadRepository } from "../../domain/interface/ciudad-repository";
 
 export class InMemoryCiudad implements ciudadRepository {
 

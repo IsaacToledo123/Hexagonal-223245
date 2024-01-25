@@ -1,4 +1,4 @@
-import { Ciudad } from "./ciudad";
+import { Ciudad } from "../entities/ciudad";
  export interface ciudadRepository{
     agregarCiudad(
         id: number,

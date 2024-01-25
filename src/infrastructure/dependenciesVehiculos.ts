@@ -1,8 +1,8 @@
-import { createVehiculosController } from "./createProductos";
-import { getAllVehiculosController } from "./getAllVehiculos";
-import { InMemoryVehiculo } from "./in-memory-vehiculo";
-import { getAllVehiculos } from "../application/getAllVehiculos";
-import { createVehiculos } from "../application/create-vehiculo";
+import { createVehiculosController } from "./controllers/createVehiculosController";
+import { getAllVehiculosController } from "./controllers/getAllVehiculos";
+import { InMemoryVehiculo } from "./repository/in-memory-vehiculo";
+import { getAllVehiculos } from "../application/methodsVehiculos/getAllVehiculos";
+import { createVehiculos } from "../application/methodsVehiculos/create-vehiculo";
 
 export const inMemoryVehiculo = new InMemoryVehiculo
 export const GetAllVehiculos= new getAllVehiculos(inMemoryVehiculo) 

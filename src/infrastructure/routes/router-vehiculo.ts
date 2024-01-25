@@ -1,7 +1,7 @@
 import express from "express";
 
-import { CreateVehiculosController } from "./dependenciesVehiculos";
-import { GetAllVehiculosController } from "./dependenciesVehiculos";
+import { CreateVehiculosController } from "../dependenciesVehiculos";
+import { GetAllVehiculosController } from "../dependenciesVehiculos";
 export const vehiculoRouter = express.Router();
 
 vehiculoRouter.get(

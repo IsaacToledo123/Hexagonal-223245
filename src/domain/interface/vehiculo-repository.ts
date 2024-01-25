@@ -1,4 +1,4 @@
-import { Vehiculo } from "./vehiculo";
+import { Vehiculo } from "../entities/vehiculo";
 
  export interface vehiculoRepository{
     createVehiculos(

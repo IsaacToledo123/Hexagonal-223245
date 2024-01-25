@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { buscarCiudad } from "../application/buscar-ciudad";
+import { buscarCiudad } from "../../application/methodsCiudad/buscar-ciudad";
 
  export class buscarCiudadController {
 
