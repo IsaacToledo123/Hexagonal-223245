@@ -4,9 +4,9 @@ import bodyParser from "body-parser";
 import express from "express";
 
 import { config } from "./config";
-import { router } from "./infrastructure/routes/router-user";
-import { vehiculoRouter } from "./infrastructure/routes/router-vehiculo";
-import { ciudadRouter } from "./infrastructure/routes/router-ciudad";
+import { router } from "./users/infrastructure/routes/router-user";
+import { vehiculoRouter } from "./vehiculos/infrastructure/routes/router-vehiculo";
+import { ciudadRouter } from "./ciudad/infrastructure/routes/router-ciudad";
 
 function boostrap() {
   const app = express();
