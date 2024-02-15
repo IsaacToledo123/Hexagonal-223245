@@ -33,4 +33,18 @@ export class InMemoryVehiculo implements vehiculoRepository {
       return null
     }
   }
+  async delete(id: number): Promise<void> {
+    const sql = "DELETE FROM vehiculos WHERE id = ?";
+    const params: any[] = [id];
+    try {
+        await query(sql, params);
+        console.log("Vehículo eliminado correctamente");
+    } catch (error) {
+        console.error("Error al eliminar vehículo:", error);
+        throw new Error("Error al eliminar vehículo");
+    }
+}
+
+
+
 }

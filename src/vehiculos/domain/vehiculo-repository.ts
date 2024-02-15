@@ -6,4 +6,5 @@ import { Vehiculo } from "./vehiculo";
         marca: String,
       ): Promise<Vehiculo | null>;
     getAllVehiculos():Promise < Vehiculo[] | null>
+    delete(id:number):Promise <void> ;
 }

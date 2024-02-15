@@ -13,7 +13,8 @@ export class InMemoryUserRepository implements UserRepository {
          
             return new User(
               usuario[0].id,
-              usuario[0].email
+              usuario[0].email,
+              usuario[0].password
             )
         } catch (error) {
             console.error(error);
@@ -32,10 +33,24 @@ async getAllUsers(): Promise<User[] | null> {
           new User(
             product.id,
             product.email,
+            product.password
           )
       );
     } catch (error) {
       return null
     }
   }
+
+  async createUser(id: number, email: String,password:string): Promise<User | null> {
+    const sql =
+      "INSERT INTO usuarios (id,marca) VALUES (?, ?,?)";
+    const params: any[] = [id, email,password];
+    try {
+      const [result]: any = await query(sql, params);
+      return new User(result.id, result.email,result.password );
+    } catch (error) {
+      return null;
+    }
+  }
+
 }

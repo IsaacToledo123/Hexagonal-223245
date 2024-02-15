@@ -1,15 +1,16 @@
 import { Request, Response } from "express";
-import { agregarCiudad } from "../../application/methodsCiudad/Agregar-ciudad";
+import { createUser } from "../../app/methodsUser/createUser";
 
-export class agregarCiudadController {
-  constructor(readonly agregarCiudad: agregarCiudad) {}
+export class createUserController {
+  constructor(readonly createUser: createUser) {}
 
   async run(req: Request, res: Response) {
     const data = req.body;
     try {
-      const vehiculo = await this.agregarCiudad.run(
+      const vehiculo = await this.createUser.run(
         data.id,
-        data.nombre,
+        data.email,
+        data.password
       );
 
       if (vehiculo)
@@ -17,8 +18,8 @@ export class agregarCiudadController {
           status: "success",
           data: {
             id: vehiculo?.id,
-            marca: vehiculo?.nombre,
-        
+            email: vehiculo?.email,
+            password:vehiculo?.password
           },
         });
       else
