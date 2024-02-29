@@ -4,13 +4,13 @@ import { vehiculoRepository } from "../../domain/vehiculo-repository";
 
 export class InMemoryVehiculo implements vehiculoRepository {
 
-  async createVehiculos(id: number, marca: String): Promise<Vehiculo | null> {
+  async createVehiculos(id: number, marca: string): Promise<Vehiculo | null> {
     const sql =
       "INSERT INTO vehiculos (id,marca) VALUES (?, ?)";
     const params: any[] = [id, marca];
     try {
       const [result]: any = await query(sql, params);
-      return new Vehiculo(result.id, result.marca );
+      return new Vehiculo(id, marca );
     } catch (error) {
       return null;
     }

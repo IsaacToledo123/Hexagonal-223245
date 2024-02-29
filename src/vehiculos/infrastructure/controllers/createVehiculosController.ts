@@ -12,7 +12,7 @@ export class createVehiculosController {
         data.marca,
       );
 
-      if (vehiculo)
+      if (vehiculo){
         res.status(201).send({
           status: "success",
           data: {
@@ -21,6 +21,9 @@ export class createVehiculosController {
         
           },
         });
+        console.log(vehiculo);
+        
+      }
       else
         res.status(204).send({
           status: "error",

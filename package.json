@@ -11,7 +11,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@types/cors": "^2.8.17",
+    "amqplib": "^0.10.3",
     "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
     "dotenv": "^16.4.1",
     "express": "^4.18.2",
     "morgan": "^1.10.0",
@@ -19,6 +22,7 @@
     "signale": "^1.4.0"
   },
   "devDependencies": {
+    "@types/amqplib": "^0.10.4",
     "@types/body-parser": "^1.19.5",
     "@types/dotenv": "^8.2.0",
     "@types/express": "^4.17.21",

@@ -5,11 +5,16 @@ import { getAllVehiculos } from "../app/methodsVehiculos/getAllVehiculos";
 import { createVehiculos } from "../app/methodsVehiculos/create-vehiculo";
 import { deleteController } from "./controllers/deleteController";
 import { deleteVehiculos } from "../app/methodsVehiculos/deleteVehiculos";
+import { INotificacionServices } from "../app/services/INotificacionService";
+import { NotificationNewProduct } from "./servicesRabbitMQ/NotificationNewProduct";
 
 
 export const inMemoryVehiculo = new InMemoryVehiculo
 export const GetAllVehiculos= new getAllVehiculos(inMemoryVehiculo) 
-export const CreateVehiculo=new createVehiculos(inMemoryVehiculo)
+const notificationNewProduct= new NotificationNewProduct()
+const notificacionService=new INotificacionServices(notificationNewProduct)
+
+export const CreateVehiculo=new createVehiculos(inMemoryVehiculo,notificacionService)
 export const CreateVehiculosController =new createVehiculosController(CreateVehiculo)
 export const GetAllVehiculosController=new getAllVehiculosController(GetAllVehiculos)
 
