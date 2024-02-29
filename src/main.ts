@@ -6,7 +6,7 @@ import cors from "cors"; // Importa el paquete cors
 import { config } from "./config";
 import { router } from "./users/infrastructure/routes/router-user";
 import { vehiculoRouter } from "./vehiculos/infrastructure/routes/router-vehiculo";
-import { ciudadRouter } from "./ciudad/infrastructure/routes/router-ciudad";
+
 
 function bootstrap() {
   const app = express();
@@ -17,7 +17,7 @@ function bootstrap() {
   app.use(bodyParser.json());
   app.use('/users', router);
   app.use('/vehiculo', vehiculoRouter);
-  app.use('/ciudad', ciudadRouter);
+ 
 
   const { port } = config.server;
 
